@@ -1,0 +1,965 @@
+/* ========================= */
+/* CONFIGURACION GENERAL */
+/* ========================= */
+
+:root{
+
+    --azul:#4A90E2;
+    --azulOscuro:#2F5DA8;
+
+    --amarillo:#FFD93D;
+
+    --verde:#6BCB77;
+
+    --rosa:#FF8FB1;
+
+    --blanco:#FFFFFF;
+
+    --gris:#F5F7FA;
+
+    --texto:#333333;
+
+    --sombra:
+    0 8px 20px rgba(0,0,0,.12);
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Nunito',sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f5f7fa,
+        #eaf4ff
+    );
+
+    color:var(--texto);
+
+    overflow-x:hidden;
+
+}
+
+/* ========================= */
+/* BARRA PROGRESO */
+/* ========================= */
+
+.progress-container{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:12px;
+
+    background:#ddd;
+
+    z-index:9999;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    width:10%;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--verde),
+        #93e8a0
+    );
+
+    transition:.5s;
+
+}
+
+/* ========================= */
+/* PANTALLAS */
+/* ========================= */
+
+.pantalla{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:
+
+    90px
+    30px
+    50px;
+
+    animation:fade .6s;
+
+}
+
+.active{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ========================= */
+/* TITULOS */
+/* ========================= */
+
+h1{
+
+    font-size:4rem;
+
+    color:var(--azulOscuro);
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+h2{
+
+    font-size:2.5rem;
+
+    color:var(--azulOscuro);
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+h3{
+
+    margin-bottom:15px;
+
+    color:var(--azulOscuro);
+
+}
+
+p{
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+
+}
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
+
+button{
+
+    border:none;
+
+    padding:
+
+    15px
+    30px;
+
+    margin:15px;
+
+    border-radius:18px;
+
+    background:var(--azul);
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:var(--sombra);
+
+}
+
+button:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.03);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+/* ========================= */
+/* SOFIA */
+/* ========================= */
+
+.sofia-container{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:10px;
+
+    z-index:9000;
+
+}
+
+.sofia-img{
+
+    width:120px;
+
+    animation:flotar 3s infinite;
+
+}
+
+@keyframes flotar{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.sofia-message{
+
+    max-width:250px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+    font-size:.95rem;
+
+}
+
+/* ========================= */
+/* PORTADA */
+/* ========================= */
+
+.portada{
+
+    text-align:center;
+
+    max-width:1000px;
+
+}
+
+.portada-img{
+
+    width:100%;
+
+    max-width:800px;
+
+    border-radius:25px;
+
+    box-shadow:var(--sombra);
+
+    margin-bottom:30px;
+
+}
+
+.portada p{
+
+    font-size:1.3rem;
+
+    margin-bottom:20px;
+
+}
+
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:var(--sombra);
+
+    max-width:900px;
+
+    margin:20px auto;
+
+}
+
+.card ul{
+
+    margin-top:15px;
+
+    text-align:left;
+
+    padding-left:20px;
+
+}
+
+.card li{
+
+    margin-bottom:10px;
+
+}
+
+/* Estilos para la actividad interactiva del cuento */
+.contenedor-cuento {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.8;
+}
+
+.texto-cuento {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+/* Palabras interactivas antes de hacerles clic */
+.palabra-clave {
+    font-weight: bold;
+    color: #2b7a78;
+    border-bottom: 2px dashed #2b7a78;
+    cursor: pointer;
+    padding: 0 4px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.palabra-clave:hover {
+    background-color: #e6f7ff;
+}
+
+/* Clases de calificación automática */
+.palabra-clave.bien {
+    background-color: #2ecc71 !important;
+    color: white !important;
+    border-bottom: none;
+    cursor: default;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.palabra-clave.mal {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border-bottom: none;
+    animation: sacudir 0.3s ease;
+}
+
+.marcador-palabras {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+}
+
+/* Animación de sacudida para cuando se equivocan */
+@keyframes sacudir {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+}
+
+/* Todas las palabras interactivas se ven igual antes del clic */
+.palabra-clave {
+    font-weight: bold;
+    color: #2b7a78;
+    border-bottom: 2px dashed #2b7a78;
+    cursor: pointer;
+    padding: 0 4px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.palabra-clave:hover {
+    background-color: #e6f7ff; /* Efecto sutil al pasar el mouse */
+}
+
+/* Si es correcta -> Verde permanente */
+.palabra-clave.bien {
+    background-color: #2ecc71 !important;
+    color: white !important;
+    border-bottom: none;
+    cursor: default;
+}
+
+/* Si es trampa -> Rojo por un segundo y se sacude */
+.palabra-clave.mal {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border-bottom: none;
+    animation: sacudir 0.3s ease;
+}
+
+@keyframes sacudir {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+}
+
+/* ========================= */
+/* ESTILO PARA VIDEOS DE YOUTUBE */
+/* ========================= */
+.video-web {
+    width: 90%;
+    max-width: 850px;
+    height: 480px; /* Altura ideal para computadoras */
+    border-radius: 25px;
+    box-shadow: var(--sombra);
+    margin-bottom: 25px;
+}
+
+/* Para que se vea bien en celulares */
+@media(max-width: 768px) {
+    .video-web {
+        height: 250px; 
+    }
+}
+
+/* ========================= */
+/* VIDEO */
+/* ========================= */
+
+video{
+
+    width:90%;
+
+    max-width:850px;
+
+    border-radius:25px;
+
+    box-shadow:var(--sombra);
+
+    margin-bottom:25px;
+
+}
+
+/* ========================= */
+/* IMAGENES */
+/* ========================= */
+
+.imagen-principal{
+
+    width:90%;
+
+    max-width:700px;
+
+    border-radius:25px;
+
+    margin:20px 0;
+
+    box-shadow:var(--sombra);
+
+}
+
+/* ========================= */
+/* SLIDER */
+/* ========================= */
+
+.slider{
+
+    width:90%;
+
+    max-width:900px;
+
+}
+
+.slide{
+
+    display:none;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.active-slide{
+
+    display:block;
+
+}
+
+.slide img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+}
+
+.slider-controls{
+
+    margin-top:20px;
+
+}
+
+/* ========================= */
+/* ACTIVIDAD IDEAS */
+/* ========================= */
+
+.texto-actividad{
+
+    max-width:900px;
+
+}
+
+.frase{
+
+    background:white;
+
+    margin:15px 0;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:var(--sombra);
+
+}
+
+.frase:hover{
+
+    transform:scale(1.02);
+
+}
+
+.frase.seleccionada{
+
+    background:#dff1ff;
+
+    border:3px solid var(--azul);
+
+}
+
+.principal{
+
+    border-left:8px solid var(--azul);
+
+}
+
+#resultadoIdeas{
+
+    font-size:1.4rem;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+}
+
+/* ========================= */
+/* CUENTO */
+/* ========================= */
+
+.cuento{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:var(--sombra);
+
+    max-width:900px;
+
+    line-height:2;
+
+}
+
+.palabra-clave{
+
+    background:#fff3b0;
+
+    padding:4px 8px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.palabra-clave:hover{
+
+    background:#ffd93d;
+
+}
+
+.palabra-seleccionada{
+
+    background:var(--verde);
+
+    color:white;
+
+}
+
+/* ========================= */
+/* DRAG DROP */
+/* ========================= */
+
+.emociones{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin:30px;
+
+}
+
+.drag-item{
+
+    background:var(--amarillo);
+
+    padding:15px 25px;
+
+    border-radius:15px;
+
+    cursor:grab;
+
+    font-weight:bold;
+
+    box-shadow:var(--sombra);
+
+}
+
+.drop-zone{
+
+    width:350px;
+
+    min-height:150px;
+
+    border:4px dashed var(--azul);
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    font-size:1.3rem;
+
+    font-weight:bold;
+
+}
+
+/* ========================= */
+/* REFLEXION */
+/* ========================= */
+
+textarea{
+
+    width:90%;
+
+    max-width:900px;
+
+    min-height:120px;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    border:2px solid #ddd;
+
+    resize:none;
+
+    margin-bottom:25px;
+
+    font-size:1rem;
+
+}
+
+label{
+
+    margin:
+
+    20px
+    0
+    10px;
+
+    font-weight:bold;
+
+}
+
+/* ========================= */
+/* QUIZ */
+/* ========================= */
+
+#quizContainer{
+
+    width:90%;
+
+    max-width:900px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.opcion{
+
+    background:#f7f9fc;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin:10px 0;
+
+    cursor:pointer;
+
+}
+
+.opcion:hover{
+
+    background:#e6f0ff;
+
+}
+
+#quizResultado{
+
+    margin-top:25px;
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
+}
+
+/* ========================= */
+/* ESTRELLAS */
+/* ========================= */
+
+.estrellas{
+
+    font-size:3rem;
+
+    margin:20px;
+
+}
+
+.estrella{
+
+    color:#FFD93D;
+
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.6);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10000;
+
+    backdrop-filter:blur(5px);
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:90%;
+
+    max-width:600px;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:var(--sombra);
+
+    animation:popup .3s;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.7);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+
+}
+
+#cerrarModal{
+
+    float:right;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+}
+
+/* ========================= */
+/* FINAL */
+/* ========================= */
+
+#estrellasFinales{
+
+    font-size:4rem;
+
+    margin:25px;
+
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:2.5rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    .sofia-container{
+
+        right:10px;
+        bottom:10px;
+
+    }
+
+    .sofia-img{
+
+        width:80px;
+
+    }
+
+    .sofia-message{
+
+        max-width:180px;
+
+        font-size:.8rem;
+
+    }
+
+}

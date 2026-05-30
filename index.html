@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo Comprensión Lectora</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- BARRA DE PROGRESO -->
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- SOFIA -->
+
+    <div class="sofia-container">
+
+        <img src="img/sofia.png" alt="Sofía" class="sofia-img">
+
+        <div class="sofia-message" id="sofiaMessage">
+
+            ¡Hola! Soy Sofía y te acompañaré durante esta aventura.
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- 1 PORTADA -->
+    <!-- ========================= -->
+
+    <section class="pantalla active" id="pantalla1">
+
+        <div class="portada">
+
+            <img src="img/portada.jpg" class="portada-img">
+
+            <h1>📚 Aprendiendo Comprensión Lectora</h1>
+
+            <p>
+                Descubre cómo entender mejor lo que lees mientras juegas y aprendes.
+            </p>
+
+            <button onclick="cambiarPantalla(2)">
+                Iniciar
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 2 BIENVENIDA -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla2">
+
+        <h2>Bienvenido</h2>
+
+        <video controls class="imagen-principal" style="height: 450px; width: 100%; object-fit: cover;">
+            <source src="video/bienvenida.mp4" type="video/mp4">
+            Tu navegador no soporta este video.
+        </video>    
+
+        <div class="card">
+
+            <h3>Objetivo General</h3>
+
+            <p>
+                Desarrollar habilidades de comprensión lectora mediante recursos interactivos.
+            </p>
+
+            <h3>Objetivos Específicos</h3>
+
+            <ul>
+
+                <li>Identificar ideas principales.</li>
+
+                <li>Reconocer ideas secundarias.</li>
+
+                <li>Comprender cuentos y lecturas.</li>
+
+                <li>Expresar opiniones personales.</li>
+
+            </ul>
+
+        </div>
+
+        <button onclick="cambiarPantalla(3)">
+            Siguiente
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 3 IMPORTANCIA LECTURA -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla3">
+
+        <h2>¿Por qué es importante leer?</h2>
+
+        <div class="slider">
+
+            <div class="slide active-slide">
+
+                <img src="img/importancia1.jpg">
+
+                <p>
+                    Leer nos permite aprender cosas nuevas y viajar con nuestra imaginación.
+                </p>
+
+            </div>
+
+            <div class="slide">
+
+                <img src="img/importancia2.jpg">
+
+                <p>
+                    La lectura fortalece la memoria y el pensamiento.
+                </p>
+
+            </div>
+
+            <div class="slide">
+
+                <img src="img/importancia3.jpg">
+
+                <p>
+                    Leer nos ayuda en la escuela y en la vida diaria.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="slider-controls">
+
+            <button id="prevSlide">⬅</button>
+
+            <button id="audioIntro">🔊 Escuchar</button>
+
+            <button id="nextSlide">➡</button>
+
+        </div>
+
+        <button onclick="cambiarPantalla(4)">
+            Siguiente
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 4 COMPRENSION LECTORA -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla4">
+
+        <h2>¿Qué es la Comprensión Lectora?</h2>
+
+        <img src="img/comprension.jpg" class="imagen-principal">
+
+        <p>
+            La comprensión lectora es la capacidad de entender, interpretar y analizar un texto.
+            No consiste únicamente en leer palabras, sino en comprender el mensaje que el autor desea transmitir.
+        </p>
+
+        <div class="acciones">
+
+            <button id="audioDefinicion">
+                🔊 Escuchar explicación
+            </button>
+
+            <button id="sabiasQue">
+                📚 ¿Sabías que?
+            </button>
+
+        </div>
+
+        <button onclick="cambiarPantalla(5)">
+            Siguiente
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 5 IDEAS PRINCIPALES -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla5">
+
+        <h2>Ideas Principales y Secundarias</h2>
+
+        <div class="texto-actividad">
+
+            <p class="frase" data-correct="false">
+                El sábado por la mañana Sofía visitó el parque.
+            </p>
+
+            <p class="frase" data-correct="false">
+                Jugó en los columpios y corrió por los jardines.
+            </p>
+
+            <p class="frase principal" data-correct="true">
+                El parque es importante porque permite divertirse, hacer ejercicio y convivir.
+            </p>
+
+            <p class="frase" data-correct="false">
+                El lugar tiene bancas y una fuente.
+            </p>
+
+        </div>
+
+        <button id="verificarIdeas">
+
+            Verificar respuestas
+
+        </button>
+
+        <div id="resultadoIdeas"></div>
+
+        <button onclick="cambiarPantalla(6)">
+            Siguiente
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 6 LECTURA -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla6">
+
+        <h2>Lectura Interactiva</h2>
+
+        <img src="img/cuento.jpg" class="imagen-principal">
+
+        <div class="contenedor-cuento">
+            <h2>La Leyenda del Roble Dorado y el Viaje de Mateo</h2>
+            <hr>  
+
+            <h3>Capítulo I: El niño que prefería construir</h3>
+            <p class="texto-cuento">
+                En los valles más profundos donde el mapa parecía perderse entre montañas, se encontraba un pequeño **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">pueblo</span>** llamado Valle Serena. Sus calles estaban empedradas y las mañanas siempre olían a pino y tierra mojada. En este lugar vivía Mateo, un niño de ocho años con una energía inagotable y un **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">suéter</span>** de rayas que siempre andaba alborotado. A Mateo le fascinaba pasar las tardes al aire libre; construía fuertes con ramas en el **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">jardín</span>**, armaba torres gigantescas con bloques de madera y corría tras las mariposas. Sin embargo, tenía un gran problema: detestaba los libros. Para él, las letras impresas eran como pequeñas hormigas negras atrapadas en hojas blancas, un laberinto aburrido que no ofrecía ninguna emoción.
+            </p>
+
+            <h3>Capítulo II: Un misterio en las alturas</h3>
+            <p class="texto-cuento">
+                Todo cambió por completo durante una tarde lluviosa de otoño, de esas en las que el viento golpea los cristales. Su abuelo, un hombre sabio de ojos amables, le pidió un favor especial: subir a buscar una **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">caja</span>** de herramientas olvidada en el rincón más alejado del **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">desván</span>**. Mateo subió con cuidado los viejos escalones de caracol, los cuales crujían bajo sus zapatos a cada paso. El lugar estaba repleto de antigüedades, baúles polvorientos y un viejo **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">reloj</span>** de péndulo que había dejado de sonar hacía muchos años. Mientras buscaba entre los objetos, una **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">lámpara</span>** rota comenzó a brillar con un destello dorado que se filtró por el ventanal, llamando de inmediato su atención.
+            </p>
+
+            <h3>Capítulo III: El llamado del gigante</h3>
+            <p class="texto-cuento">
+                Al limpiar el vidrio con la manga para ver de dónde provenía ese brillo, Mateo quedó completamente paralizado. A lo lejos, en la colina más alta del horizonte, el majestuoso **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">árbol</span>** Esperanza, un roble milenario del que su abuelo siempre le contaba leyendas, brillaba con una intensa luz verde y dorada que cortaba la niebla gris de la tarde. Olvidando por completo las herramientas y la **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">lluvia</span>**, el niño bajó corriendo las escaleras, abrió la puerta principal de la casa y se adentró en el **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">bosque</span>** con el corazón latiéndole a mil por hora, empujado por una curiosidad que jamás había experimentado en su vida.
+            </p>
+
+            <h3>Capítulo IV: El tesoro oculto entre las raíces</h3>
+            <p class="texto-cuento">
+                El viento soplaba con fuerza y las hojas secas bailaban a su alrededor, pero Mateo no se detuvo hasta llegar al pie del gigante de madera. Allí, justo en el centro del tronco donde la corteza se abría como una pequeña cueva secreta, descubrió un **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">cofre</span>** de bronce entreabierto. No contenía monedas de oro, ni joyas, ni un **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">mapa</span>** de piratas; en su lugar, descansaba un antiguo y pesado **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">libro</span>** con lomo de cuero gastado y esquinas protegidas por relieves metálicos. Con manos temblorosas por la emoción, Mateo lo tomó entre sus brazos, se sentó sobre la hierba y pasó la primera página.
+            </p>
+
+            <h3>Capítulo V: Cuando las letras cobran vida</h3>
+            <p class="texto-cuento">
+                En ese instante, el bosque entero guardó un silencio sagrado y una energía increíble brotó de las páginas abiertas. La tinta negra comenzó a despegarse del papel, transformándose en figuras tridimensionales de luz que flotaban en el aire. Ante sus ojos maravillados, una densa nube blanca se extendió por el suelo, convirtiéndose en un océano flotante de algodón. Navegando sobre ese mar de nubes, apareció un diminuto e intrincado **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">barco</span>** de madera fina, cuyas velas translúcidas brillaban con los colores del arcoíris mientras avanzaba con elegancia. Mateo soltó una carcajada de pura felicidad al ver que, mientras fijaba la vista en el texto, el cielo de la proyección se llenaba de miles de **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">estrellas</span>** parpadeantes que giraban formando figuras de dragones y castillos.
+            </p>
+
+            <h3>Capítulo VI: El secreto de la lectura</h3>
+            <p class="texto-cuento">
+                Una brillante **<span class="palabra-clave incorrecta" onclick="evaluarPalabra(this)">mariposa</span>** hecha de letras cursivas revoloteó cerca de su rostro antes de transformarse en un pequeño **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">pergamino</span>** dorado que cayó directamente sobre sus manos. Con mucho cuidado, el niño desenrolló el mensaje y leyó una inscripción que se grabaría en su mente para siempre: <i>"La lectura no es una tarea aburrida, es la **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">llave</span>** secreta que tu mente necesita para abrir las puertas de cualquier universo imaginable"</i>. Al pronunciar estas palabras en voz alta, una ráfaga de viento templado sopló a su alrededor, la **<span class="palabra-clave correcta" onclick="evaluarPalabra(this)">magia</span>** regresó suavemente al interior del texto y el portón de la fantasía se cerró. Mateo abrazó el objeto contra su pecho; finalmente había comprendido que los relatos no eran prisiones de papel, sino los portales más maravillosos jamás creados.
+            </p>
+        </div>
+
+        <div class="marcador-palabras">
+            <p>✨ Palabras clave reales encontradas: <span id="contador-claves">0</span> de 10 ✨</p>
+        </div>
+
+        <button onclick="cambiarPantalla(7)">
+            Siguiente
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 7 COMPRENSION -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla7">
+
+        <h2>Comprendiendo el cuento</h2>
+
+        <img src="img/personajes.jpg" class="imagen-principal">
+
+        <h3>
+
+            Arrastra las emociones hacia Mateo
+
+        </h3>
+
+        <div class="emociones">
+
+            <div draggable="true" class="drag-item">
+                😊 Curioso
+            </div>
+
+            <div draggable="true" class="drag-item">
+                💪 Responsable
+            </div>
+
+            <div draggable="true" class="drag-item">
+                😡 Enojado
+            </div>
+
+        </div>
+
+        <div class="drop-zone">
+
+            Mateo
+
+        </div>
+
+        <button onclick="cambiarPantalla(8)">
+            Siguiente
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 8 REFLEXION -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla8">
+
+        <h2>Reflexión Personal</h2>
+
+        <img src="img/reflexion.jpg" class="imagen-principal">
+
+        <label>
+
+            ¿Qué fue lo que más te gustó del cuento?
+
+        </label>
+
+        <textarea></textarea>
+
+        <label>
+
+            ¿Qué enseñanza te dejó?
+
+        </label>
+
+        <textarea></textarea>
+
+        <label>
+
+            ¿Cómo aplicarías esa enseñanza?
+
+        </label>
+
+        <textarea></textarea>
+
+        <button onclick="cambiarPantalla(9)">
+            Siguiente
+        </button>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 9 QUIZ -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla9">
+
+        <h2>Evaluación Final</h2>
+
+        <div id="quizContainer">
+
+        </div>
+
+        <div id="quizResultado"></div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 10 CIERRE -->
+    <!-- ========================= -->
+
+    <section class="pantalla" id="pantalla10">
+
+        <h2>🎉 Felicidades</h2>
+
+        <video controls>
+
+            <source src="video/cierre.mp4" type="video/mp4">
+
+        </video>
+
+        <div id="estrellasFinales">
+
+        </div>
+
+        <p>
+
+            Has completado esta aventura de comprensión lectora.
+
+            Sigue leyendo todos los días para descubrir nuevos conocimientos y aventuras.
+
+        </p>
+
+        <button>
+
+            Finalizar recorrido
+
+        </button>
+
+    </section>
+
+    <!-- MODAL -->
+
+    <div class="modal" id="modalSabiasQue">
+
+        <div class="modal-content">
+
+            <span id="cerrarModal">
+
+                ×
+
+            </span>
+
+            <h2>
+
+                📚 ¿Sabías que?
+
+            </h2>
+
+            <p id="datoCurioso">
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
